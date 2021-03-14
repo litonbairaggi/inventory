@@ -2,6 +2,7 @@
 
 namespace App;
 
+
 use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
@@ -16,4 +17,8 @@ class Product extends Model
         'buying_price',
         'selling_price',
     ];
+
+    public function stock_profile(){
+       return $this->hasOne('App\Stock');
+    }
 }

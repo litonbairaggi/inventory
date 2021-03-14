@@ -75,6 +75,18 @@ class ProductController extends Controller
         return view('backend.product.edit', compact('editproducts'));
 
     }
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function viewProduct($id)
+    {
+        $product =Product::findOrFail($id);
+        return view('backend.product.view', compact('product'));
+
+    }
 
     /**
      * Update the specified resource in storage.

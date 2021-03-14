@@ -4,22 +4,22 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Purchase extends Model
+class Sell extends Model
 {
     //
-    protected $table='purchases';
+    protected $table='sells';
     protected $fillable = [
-        'product_id', 
-        'supplier_id',         
+        'product_id	', 
+        'customer_id', 
         'quantity',
     ];
 
-    // Hasone join
 
     public function productProfile(){
         return $this->hasOne('App\Product', 'id', 'product_id');
       }
-    public function suplierProfile(){
-        return $this->hasOne('App\Supplier', 'id', 'supplier_id');
+    public function customerProfile(){
+        return $this->hasOne('App\Customer', 'id', 'customer_id');
       }
+      
 }

@@ -97,9 +97,23 @@
                             <div class="collapse" id="purchase" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{URL::to('backend/purchase/create')}}">Create Purchase</a>
-                                    <a class="nav-link" href="{{URL::to('/backend/purchase/list')}}">List Purchase</a>
+                                    <a class="nav-link" href="{{URL::to('backend/purchase/list')}}">List Purchase</a>
                                 </nav>
                             </div>
+
+                            <a class="nav-link collapsed" href="sell" data-toggle="collapse" data-target="#sell" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Sell
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="sell" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="{{URL::to('backend/sell/create')}}">Create Sell</a>
+                                    <a class="nav-link" href="{{URL::to('backend/sell/list')}}">List Sell</a>
+                                </nav>
+                            </div>
+
+                            <a class="nav-link" href="{{URL::to('backend/stocks')}}">Stocks</a>
 
                         </div>
                     </div>
