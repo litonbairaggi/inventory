@@ -39,6 +39,20 @@
                                     <label for="quantity">Product Quantity:</label>
                                     <input type="number" value="{{$editpurchases->quantity}}" class="form-control" placeholder="Product quantity" name="quantity" id="quantity">
                                 </div>
+
+                                 <!-- TODO -->
+                                   
+                                <div class="form-group">   
+                                    <label for="status">Status:</label>
+                                    <select name="status" id="status" class="form-control">
+                                           <option value="{{$editpurchases->id}}">{{$editpurchases->status}}</option>
+                                           
+                                           @foreach($editpurchases as $editpurchase)
+                                           <option value="{{$editpurchase->id}}">{{$editpurchase->status}}</option>
+                                        @endforeach 
+
+                                    </select>
+                                </div>
                                 
                                 <button type="submit" class="btn btn-primary">Update</button>
                                 </form>

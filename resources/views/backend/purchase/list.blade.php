@@ -18,6 +18,7 @@
                                                 <th>Unit Price</th>
                                                 <th>Quantity</th>
                                                 <th>Price</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -29,6 +30,7 @@
                                                 <th>Unit Price</th>
                                                 <th>Quantity</th>
                                                 <th>Price</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -43,6 +45,7 @@
                                             <td>{{$purchase->productProfile->buying_price}}</td>
                                             <td>{{$purchase->quantity}}</td>
                                             <td>{{$purchase->quantity*$purchase->productProfile->buying_price}}</td>
+                                            <td>{{$purchase->status}}</td>
                                             <td>
                                                 <a href="{{URL::to('/backend/purchase/invoice',$purchase->id)}}" class="btn btn-primary">Report</a>
                                                 <a href="{{URL::to('/backend/purchase/edit',$purchase->id)}}" class="btn btn-primary">Edit</a>

@@ -45,13 +45,14 @@ class PurchaseController extends Controller
     public function store(Request $request)
     {
         //
-        // return $request->all();
+        //  return $request->all();
 
         $puchaseObj= new Purchase;
         
         $puchaseObj->product_id=$request->product_id;
         $puchaseObj->supplier_id=$request->suplier_id;
         $puchaseObj->quantity=$request->quantity;
+        $puchaseObj->status=$request->status;
         $puchaseObj->save();
 
         // add proudct to stock                                                   
@@ -125,6 +126,7 @@ class PurchaseController extends Controller
         $purchaseProfile->product_id=$request->product_id;
         $purchaseProfile->supplier_id=$request->suplier_id;
         $purchaseProfile->quantity=$request->quantity;
+        $purchaseProfile->status=$request->status;
         $purchaseProfile->save();
 
         $productQuantity=DB::table('purchases')->where('product_id',$request->product_id)->sum('quantity');

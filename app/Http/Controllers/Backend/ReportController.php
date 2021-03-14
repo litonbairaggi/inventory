@@ -19,9 +19,8 @@ class ReportController extends Controller
 
 
     public function  stockReport(){
-
         $stocks =Stock::get();
         return view('backend.reports.stock', compact('stocks'));
     }
-    
+
 }

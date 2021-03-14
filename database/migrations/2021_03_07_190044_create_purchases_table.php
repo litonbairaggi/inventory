@@ -18,6 +18,7 @@ class CreatePurchasesTable extends Migration
             $table->integer('product_id');
             $table->integer('supplier_id');
             $table->integer('quantity');
+            $table->enum('status', ['paid', 'unpaid']);
             $table->timestamps();
         });
     }

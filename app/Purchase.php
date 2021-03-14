@@ -12,6 +12,7 @@ class Purchase extends Model
         'product_id', 
         'supplier_id',         
         'quantity',
+        'status',
     ];
 
     // Hasone join
