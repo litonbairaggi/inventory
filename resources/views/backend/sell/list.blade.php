@@ -18,6 +18,7 @@
                                                 <th>Unit Price</th>
                                                 <th>Quantity</th>
                                                 <th>Price</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -29,6 +30,7 @@
                                                 <th>Unit Price</th>
                                                 <th>Quantity</th>
                                                 <th>Price</th>
+                                                <th>Status</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -43,6 +45,7 @@
                                             <td>{{$sell->productProfile->buying_price}}</td>
                                             <td>{{$sell->quantity}}</td>
                                             <td>{{$sell->quantity*$sell->productProfile->buying_price}}</td>
+                                            <td>{{$sell->status}}</td>
                                             <td>
                                                 <a href="{{URL::to('/backend/sell/invoice',$sell->id)}}" class="btn btn-primary">Report</a>
                                                 

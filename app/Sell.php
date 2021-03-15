@@ -12,6 +12,7 @@ class Sell extends Model
         'product_id	', 
         'customer_id', 
         'quantity',
+        'status',
     ];
 
 

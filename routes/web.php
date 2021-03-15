@@ -45,9 +45,6 @@ Route::get('/backend/supplier/edit/{id}','Backend\SupplierController@edit');
 Route::post('/backend/supplier/update/{id}','Backend\SupplierController@update');
 Route::get('/backend/supplier/destroy/{id}','Backend\SupplierController@destroy');
 
-// Stocks
-Route::get('/backend/stocks','Backend\ReportController@stockReport');
-
 // purchase route
 Route::get('/backend/purchase/create','Backend\PurchaseController@create');
 Route::post('/backend/purchase/store','Backend\PurchaseController@store');
@@ -60,10 +57,19 @@ Route::get('/backend/sell/create','Backend\SellController@create');
 Route::post('/backend/sell/store','Backend\SellController@store');
 Route::get('/backend/sell/list','Backend\SellController@list');
 
+// Stocks
+Route::get('/backend/stocks','Backend\ReportController@stockReport');
+
 // report(invoice) route
 Route::get('/backend/purchase/invoice/{id}','Backend\ReportController@purchaseInvoice');
+Route::get('/backend/sell/invoice/{id}','Backend\ReportController@sellInvoice');
 
+// product import route
+Route::get('/backend/product_import/create','Backend\ProductImportController@create');
+Route::post('/backend/product/import','Backend\ProductImportController@importProduct');
 
+// product export route
+Route::get('/export', 'Backend\ProductExportController@export');
 });
  
 

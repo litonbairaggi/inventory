@@ -39,6 +39,19 @@
                                     <label for="quantity">Product Quantity:</label>
                                     <input type="number" class="form-control" placeholder="Product quantity" name="quantity" id="quantity">
                                 </div>
+
+                                <div class="form-group">
+                                    <label for="description">Description:</label><br>
+                                    <textarea rows="4" cols="50" class="form-control" name="description" id="description" placeholder="Description text hare..."></textarea>
+                                </div> 
+
+                                <div class="form-group">
+                                    <label for="status">Status:</label>
+                                    <select name="status" id="status" class="form-control">
+                                           <option value="paid">paid</option>
+                                           <option value="unpaid">unpaid</option> 
+                                    </select>
+                                </div>
                                 
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>

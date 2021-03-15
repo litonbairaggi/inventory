@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Sell;
 use App\Stock;
 use App\Purchase;
 use Illuminate\Http\Request;
@@ -21,6 +22,11 @@ class ReportController extends Controller
     public function  stockReport(){
         $stocks =Stock::get();
         return view('backend.reports.stock', compact('stocks'));
+    }
+
+    public function sellInvoice($id){
+        $sellReport = Sell::findOrFail($id);
+        return view('backend.reports.sell-invoice', compact('sellReport'));
     }
 
 }

@@ -45,12 +45,8 @@
                                 <div class="form-group">   
                                     <label for="status">Status:</label>
                                     <select name="status" id="status" class="form-control">
+                                           <option value="{{$editpurchases->status}}">{{$editpurchases->status}}</option>
                                            <option value="{{$editpurchases->id}}">{{$editpurchases->status}}</option>
-                                           
-                                           @foreach($editpurchases as $editpurchase)
-                                           <option value="{{$editpurchase->id}}">{{$editpurchase->status}}</option>
-                                        @endforeach 
-
                                     </select>
                                 </div>
                                 

@@ -14,28 +14,30 @@
          <div class="card">
             <div class="card-header">
                Invoice
-               <strong>{{$purchaseReport->created_at}}</strong> 
+               <strong>{{$sellReport->created_at}}</strong> 
                <span class="float-right"> <strong>Status:</strong> Pending</span>
             </div>
             <div class="card-body">
                <div class="row mb-4">
-                  <div class="col-sm-6">
-                     <h6 class="mb-3">From:</h6>
-                     <div>
-                        <strong>{{$purchaseReport->suplierProfile->name}}</strong>
-                     </div>
-                     <div>{{$purchaseReport->suplierProfile->address}}</div>
-                     <div>Email: {{$purchaseReport->suplierProfile->email}}</div>
-                     <div>Phone: {{$purchaseReport->suplierProfile->Phone}}</div>
-                  </div>
-                  <div class="col-sm-6">
+
+               <div class="col-sm-6">
                      <h6 class="mb-3">To:</h6>
                      <div>
                         <strong>Circle Pie</strong>
                      </div>
                      <div>Badda, Dhaka</div>
                      <div>Email: liton@gmail.com</div>
-                     <div>Phone: +089736442</div>
+                     <div>Phone: +8801610202717</div>
+                  </div>
+
+                  <div class="col-sm-6">
+                     <h6 class="mb-3">From:</h6>
+                     <div>
+                        <strong>{{$sellReport->customerProfile->name}}</strong>
+                     </div>
+                     <div>{{$sellReport->customerProfile->address}}</div>
+                     <div>Email: {{$sellReport->customerProfile->email}}</div>
+                     <div>Phone: {{$sellReport->customerProfile->Phone}}</div>
                   </div>
                </div>
                <div class="table-responsive-sm">
@@ -53,11 +55,11 @@
                      <tbody>
                         <tr>
                            <td class="center">1</td>
-                           <td class="left strong">{{$purchaseReport->productProfile->name}}</td>
+                           <td class="left strong">{{$sellReport->productProfile->name}}</td>
                            <td class="left strong"> Demo descripton</td>
-                           <td class="right">{{$purchaseReport->productProfile->buying_price}}</td>
-                           <td class="center">{{$purchaseReport->quantity}}</td>
-                           <td class="right">{{$purchaseReport->quantity*$purchaseReport->productProfile->buying_price}}</td>
+                           <td class="right">{{$sellReport->productProfile->selling_price}}</td>
+                           <td class="center">{{$sellReport->quantity}}</td>
+                           <td class="right">{{$sellReport->quantity*$sellReport->productProfile->selling_price}}</td>
                         </tr>
                      </tbody>
                   </table>
@@ -72,7 +74,7 @@
                               <td class="left">
                                  <strong>Subtotal</strong>
                               </td>
-                              <td class="right">{{$purchaseReport->quantity*$purchaseReport->productProfile->buying_price}}</td>
+                              <td class="right">{{$sellReport->quantity*$sellReport->productProfile->selling_price}}</td>
                            </tr>
                            <tr>
                               <td class="left">
@@ -91,20 +93,20 @@
                                  <strong>Total</strong>
                               </td>
                               <td class="right">
-                                 <strong>{{$purchaseReport->quantity*$purchaseReport->productProfile->buying_price}}</strong>
+                                 <strong>{{$sellReport->quantity*$sellReport->productProfile->selling_price}}</strong>
                               </td>
                               <td class="right">
                                  <strong>TK</strong>
                               </td>
                               <td class="right">
-                                 <strong>{{$purchaseReport->status}}</strong>
+                                 <strong>{{$sellReport->status}}</strong>
                               </td>
                            </tr>
                         </tbody>
                      </table>
                   </div>
-               </div>
-               <a href="{{URL::to('backend/purchase/list')}}" class="previous">&laquo; Previous</a>
+               </div>         
+               <a href="{{URL::to('backend/sell/list')}}" class="previous">&laquo; Previous</a>
             </div>
          </div>
       </div>

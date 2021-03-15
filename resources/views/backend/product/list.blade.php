@@ -8,7 +8,11 @@
                                 Product list
                             </div>
                             <div class="card-body">
+                            <a class="btn btn-primary" href="{{URL::to('backend/product_import/create')}}">Import</a>
+                            <a class="btn btn-primary" href="{{URL::to('export')}}">Export</a>
+                            
                                 <div class="table-responsive">
+
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
                                             <tr>
