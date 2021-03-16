@@ -70,6 +70,10 @@ Route::post('/backend/product/import','Backend\ProductImportController@importPro
 
 // product export route
 Route::get('/export', 'Backend\ProductExportController@export');
+
+// setting route
+Route::get('/backend/settingss/create','Backend\SettingController@create'); 
+Route::post('/backend/settingss/store','Backend\SettingController@store'); 
 });
  
 

@@ -114,7 +114,7 @@
                             </div>
 
                             <a class="nav-link" href="{{URL::to('backend/stocks')}}">Stocks</a>
-                            <a class="nav-link" href="{{URL::to('backend/stocks')}}">Setting</a>
+                            <a class="nav-link" href="{{URL::to('backend/settingss/create')}}">Setting</a>
 
                         </div>
                     </div>
