@@ -18,6 +18,7 @@ class CreateSellsTable extends Migration
             $table->integer('product_id');
             $table->integer('customer_id');
             $table->integer('quantity');
+            $table->string('description');
             $table->enum('status', ['paid', 'unpaid']);
             $table->timestamps();
         });

@@ -28,6 +28,8 @@ Route::post('/backend/product/update/{id}','Backend\ProductController@update');
 Route::get('/backend/product/destroy/{id}','Backend\ProductController@destroy');
 
 Route::get('/backend/product/view/{id}','Backend\ProductController@viewProduct'); 
+// product search
+Route::post('/backend/product/list','Backend\ProductController@list');
 
 // Customer route
 Route::get('/backend/customer/create','Backend\CustomerController@create');
@@ -56,6 +58,8 @@ Route::post('/backend/purchase/update','Backend\PurchaseController@update');
 Route::get('/backend/sell/create','Backend\SellController@create');
 Route::post('/backend/sell/store','Backend\SellController@store');
 Route::get('/backend/sell/list','Backend\SellController@list');
+// product search
+Route::post('/backend/sell/list','Backend\SellController@list');
 
 // Stocks
 Route::get('/backend/stocks','Backend\ReportController@stockReport');
@@ -74,6 +78,12 @@ Route::get('/export', 'Backend\ProductExportController@export');
 // setting route
 Route::get('/backend/settingss/create','Backend\SettingController@create'); 
 Route::post('/backend/settingss/store','Backend\SettingController@store'); 
+
+// start and end date route
+
+
+
+
 });
  
 

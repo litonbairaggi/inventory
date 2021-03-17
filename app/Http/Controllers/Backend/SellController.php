@@ -48,6 +48,8 @@ class SellController extends Controller
         $sellObj->product_id=$request->product_id;
         $sellObj->customer_id=$request->customer_id;
         $sellObj->quantity=$request->quantity;
+        $sellObj->description=$request->description;
+        $sellObj->created_at=$request->created_at;
         $sellObj->save();
 
         $stockprofi = $sellObj->productProfile->stock_profile;
@@ -65,12 +67,18 @@ class SellController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function list()
+    public function list(Request $request)
     {
-        $sells=Sell::all();
+
+        if(!empty($request->from_date) && !empty($request->to_date)) {
+            $sells=Sell::
+            whereBetween('created_at', [$request->from_date." 00:00:00", $request->to_date." 23:59:59"])->get();
+        }else {
+            $sells=Sell::all();
+        }
+      
         return view('backend.sell.list', compact('sells'));
     }
-
 
     /**
      * Update the specified resource in storage.

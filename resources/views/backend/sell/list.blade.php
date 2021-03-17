@@ -8,6 +8,19 @@
                                 Product list
                             </div>
                             <div class="card-body">
+
+                            <form action="{{URL::to('/backend/sell/list')}}" method="post" >
+                                @csrf
+                                <label for="fromtDate">From date:</label>
+                                <input type="date" id="from_date" name="from_date">
+                             
+
+                                <label for="toDate">To date:</label>
+                                <input type="date" id="to_date" name="to_date">
+
+                                <button type="submit" class="btn btn-primary">Search</button>
+                                </form>
+
                                 <div class="table-responsive">
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                         <thead>
@@ -18,7 +31,9 @@
                                                 <th>Unit Price</th>
                                                 <th>Quantity</th>
                                                 <th>Price</th>
+                                                <th>Description</th>
                                                 <th>Status</th>
+                                                <th>Created_at</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -30,7 +45,9 @@
                                                 <th>Unit Price</th>
                                                 <th>Quantity</th>
                                                 <th>Price</th>
+                                                <th>Description</th>
                                                 <th>Status</th>
+                                                <th>Created_at</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -45,7 +62,9 @@
                                             <td>{{$sell->productProfile->buying_price}}</td>
                                             <td>{{$sell->quantity}}</td>
                                             <td>{{$sell->quantity*$sell->productProfile->buying_price}}</td>
+                                            <td>{{$sell->description}}</td>
                                             <td>{{$sell->status}}</td>
+                                            <td>{{$sell->created_at}}</td>
                                             <td>
                                                 <a href="{{URL::to('/backend/sell/invoice',$sell->id)}}" class="btn btn-primary">Report</a>
                                                 

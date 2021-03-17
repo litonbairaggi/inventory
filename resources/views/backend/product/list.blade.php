@@ -10,7 +10,17 @@
                             <div class="card-body">
                             <a class="btn btn-primary" href="{{URL::to('backend/product_import/create')}}">Import</a>
                             <a class="btn btn-primary" href="{{URL::to('export')}}">Export</a>
-                            
+                            <form action="{{URL::to('/backend/product/list')}}" method="post" >
+                                @csrf
+                                <label for="fromtDate">From date:</label>
+                                <input type="date" id="from_date" name="from_date">
+                             
+
+                                <label for="toDate">To date:</label>
+                                <input type="date" id="to_date" name="to_date">
+
+                                <button type="submit" class="btn btn-primary">Search</button>
+                                </form>
                                 <div class="table-responsive">
 
                                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -21,6 +31,7 @@
                                                 <th>Product Code</th>
                                                 <th>Buying price</th>
                                                 <th>Selling price</th>
+                                                <th>Created_at</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -31,6 +42,7 @@
                                                 <th>Product Code</th>
                                                 <th>Buying price</th>
                                                 <th>Selling price</th>
+                                                <th>Created_at</th>
                                                 <th>Action</th>
                                             </tr>
                                         </tfoot>
@@ -44,6 +56,7 @@
                                             <td>{{$product->product_code}}</td>
                                             <td>{{$product->buying_price}}</td>
                                             <td>{{$product->selling_price}}</td>
+                                            <td>{{$product->created_at}}</td>
                                             <td>
                                                 <a href="{{URL::to('/backend/product/edit',$product->id)}}" class="btn btn-primary">Edit</a>
                                                 <a href="{{URL::to('/backend/product/destroy',$product->id)}}"  class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');">Delete</a>

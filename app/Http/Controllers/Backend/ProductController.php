@@ -45,6 +45,7 @@ class ProductController extends Controller
         $productobj->product_code=$request->product_code;
         $productobj->buying_price=$request->buying_price;
         $productobj->selling_price=$request->selling_price;
+        $productobj->created_at=$request->created_at;
         $productobj->save();
         Session::flash('message','Successfully Create');
         return redirect()->back();
@@ -56,10 +57,18 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function list()
+    public function list(Request $request)
     {
         //
-        $products=Product::all();
+
+
+        if(!empty($request->from_date) && !empty($request->to_date)) {
+            $products=Product::
+            whereBetween('created_at', [$request->from_date." 00:00:00", $request->to_date." 23:59:59"])->get();
+        }else {
+            $products=Product::all();
+        }
+      
         return view('backend.product.list', compact('products'));
     }
 
@@ -102,6 +111,7 @@ class ProductController extends Controller
         $productProfile->product_code=$request->product_code;
         $productProfile->buying_price=$request->buying_price;
         $productProfile->selling_price=$request->selling_price;
+        $productProfile->created_at=$request->created_at;
         $productProfile->save();
         Session::flash('message','Successfully Update');
         return redirect()->back();
@@ -119,4 +129,13 @@ class ProductController extends Controller
         $productProfiles->delete();
         return redirect()->back();
     }
+
+
+    // public function search($id)
+    // {
+    //     $dates = Product::where('tour_id','=',$request->id)
+    // ->whereBetween('start', array('2020-01-01', '2030-12-31'))
+    // ->whereBetween('end', array('2020-01-01', '2030-12-31'))
+    // ->get();
+    // }
 }
