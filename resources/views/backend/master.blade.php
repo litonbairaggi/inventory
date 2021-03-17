@@ -46,12 +46,18 @@
             </ul>
         </nav>
 
-
         <div id="layoutSidenav">
             <div id="layoutSidenav_nav">
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
+
+
+
+
+
+
+                            <a class="nav-link" href="{{URL::to('backend/dashboard/list')}}"><h4>Dashboard</h4></a>
 
                             <a class="nav-link collapsed" href="product" data-toggle="collapse" data-target="#product" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>

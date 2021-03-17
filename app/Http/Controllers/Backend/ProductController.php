@@ -45,7 +45,6 @@ class ProductController extends Controller
         $productobj->product_code=$request->product_code;
         $productobj->buying_price=$request->buying_price;
         $productobj->selling_price=$request->selling_price;
-        $productobj->created_at=$request->created_at;
         $productobj->save();
         Session::flash('message','Successfully Create');
         return redirect()->back();

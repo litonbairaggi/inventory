@@ -79,7 +79,8 @@ Route::get('/export', 'Backend\ProductExportController@export');
 Route::get('/backend/settingss/create','Backend\SettingController@create'); 
 Route::post('/backend/settingss/store','Backend\SettingController@store'); 
 
-// start and end date route
+// dashboard route
+Route::get('/backend/dashboard/list','Backend\DashboardContraller@list');
 
 
 
