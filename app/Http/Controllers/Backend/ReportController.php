@@ -28,5 +28,4 @@ class ReportController extends Controller
         $sellReport = Sell::findOrFail($id);
         return view('backend.reports.sell-invoice', compact('sellReport'));
     }
-
 }

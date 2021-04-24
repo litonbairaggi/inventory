@@ -5,7 +5,7 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
-                                Product list
+                                Sell list
                             </div>
                             <div class="card-body">
 
@@ -66,8 +66,7 @@
                                             <td>{{$sell->status}}</td>
                                             <td>{{$sell->created_at}}</td>
                                             <td>
-                                                <a href="{{URL::to('/backend/sell/invoice',$sell->id)}}" class="btn btn-primary">Report</a>
-                                                
+                                                <a href="{{URL::to('/backend/sell/invoice',$sell->id)}}" class="btn btn-primary">Report</a>                                                
                                             </td>
                                             </tr>
                                             @endforeach

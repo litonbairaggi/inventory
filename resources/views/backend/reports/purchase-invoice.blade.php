@@ -15,6 +15,9 @@
             <div class="card-header">
                Invoice
                <strong>{{$purchaseReport->created_at}}</strong> 
+
+               <a href="{{ url('dynamic_pdf/pdf') }}" class="btn btn-danger">Convert into PDF</a>
+               
                <span class="float-right"> <strong>Status:</strong> Pending</span>
             </div>
             <div class="card-body">

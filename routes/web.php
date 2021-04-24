@@ -80,9 +80,7 @@ Route::get('/backend/settingss/create','Backend\SettingController@create');
 Route::post('/backend/settingss/store','Backend\SettingController@store'); 
 
 // dashboard route
-Route::get('/backend/dashboard/list','Backend\DashboardContraller@list');
-
-
+Route::get('/backend/dashboard','Backend\DashboardContraller@index');
 
 
 });

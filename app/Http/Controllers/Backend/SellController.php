@@ -49,7 +49,6 @@ class SellController extends Controller
         $sellObj->customer_id=$request->customer_id;
         $sellObj->quantity=$request->quantity;
         $sellObj->description=$request->description;
-        $sellObj->created_at=$request->created_at;
         $sellObj->save();
 
         $stockprofi = $sellObj->productProfile->stock_profile;
